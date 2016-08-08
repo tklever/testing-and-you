@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/vaulttech.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="img/happy-vault-boy.jpg">
+					<h1>Testing and You</h1>
+					<h3>The Art of Software Communication</h3>
+					<p>
+						<small>Created by Tim Klever</small>
+					</p>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Who is this guy?</h2>
+					<h4>Tim Klever</h4>
+					<ul style="font-size:.8em;">
+						<li>Testing Zealot</li>
+						<li>Lifelong Nerd & PHP Enthusiast</li>
+						<li>From Phoenix, AZ</li>
+						<li>Purple Belt in Brazilian Jiu Jitsu</li>
+					</ul>
+					<p style="font-size: .8em;">Contact: tim@timisawesome.com - @timklever</p>
+					<img src="img/stanza.jpg" style="width:20%;" />
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>What's this talk all about</h2>
+					<p>Two Parts:</p>
+					<ul>
+						<li>The Theory of (Testing) Everything</li>
+						<li>The Nitty Gritty</li>
+					</ul>
+				</section>
+				<section style="font-size: 1.7em;">
+					<p><span style="font-size: 2em;">test<sup style="font-size: .5em;">1</sup></span><br />/test/</p>
+
+					<p><span style="font-style: italic;">noun</span></p>
+					<ol>
+						<li>a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.</li>
+					</ol>
+
+					<p><span style="font-style: italic;">verb</span></p>
+					<ol>
+						<li>take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.</li>
+					</ol>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<p style="font-size:2em;">Production code is<br /><span style="font-size: 1.5em;">CONSTANTLY</span><br />being tested</p>
+				</section>
+				<section data-background="img/upset-vault-boy.jpg">
+					<h2>Manual Testing</h2>
+					<div style="background: url('img/blue-background.jpg'); width:70%; padding: 2%;">
+					<p>Manual Testing is:</p>
+					<ul>
+						<li class="fragment fade-in">Slow</li>
+						<li class="fragment fade-in">Expensive</li>
+						<li class="fragment fade-in">Unreliable</li>
+					</ul>
+					<p class="fragment fade-in">But it does work!</p>
+					</div>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>We can do a better job!</h2>
+					<p>Types of Automated Tests</p>
+					<ul>
+						<li>Unit Tests</li>
+						<li>Behavior Tests</li>
+						<li>Characterization Tests</li>
+						<li>Contract Tests</li>
+						<li class="fragment strike">Integration Tests</li>
+						<li>Performance Tests</li>
+						<li>Always More...</li>
+					</ul>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>3 types of software bugs</h2>
+					<ul>
+						<li>Incorrect Implementation<span class="fragment reveal"> - Unit Tests</span></li>
+						<li>Incorrect Specification<span class="fragment reveal"> - Behavior Tests</span></li>
+						<li>Missing Specifications<span class="fragment reveal"> - Behavior Tests</span></li>
+					</ul>
+				</section>
+
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Things that can not be achieved without Automated Testing</h2>
+					<ul>
+						<li>Continuous Integration (CI)</li>
+						<li>Continuous Deployment (CD)</li>
+						<li>Reasonable Refactoring</li>
+						<li>Agile / Extreme Programming Practices</li>
+						<li>Emergent Design</li>
+					</ul>
+				</section>
+				<section>
+					<blockquote style="width:100%; font-size: 1.4em;">
+						Take away my <span class="fragment fade-out">people</span>,
+						but leave my <span class="fragment fade-out">factories</span>,
+						and soon <span class="fragment fade-out">grass will grow on the factory floors</span>.<br />
+						Take away my <span class="fragment fade-out">factories</span>, but leave my <span class="fragment fade-out">people</span>, and soon we will have a new and better <span class="fragment fade-out">factory</span>.
+						<div style="text-align: right;">- Andrew Carnegie</div>
+					</blockquote>
+				</section>
+				<section style="font-size: 2.8em;">
+					Take away my <span class="fragment fade-in">test suites</span>,
+					but leave my <span class="fragment fade-in">source code</span>,
+					and soon <span class="fragment fade-in">the codebase will be expensive and bitrotten</span>.<br />
+					Take away my <span class="fragment fade-in">source code</span>,
+					but leave my <span class="fragment fade-in">test suites</span>,
+					and soon we will have a new and better <span class="fragment fade-in">codebase</span>.
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<p style="font-size:2em;">Tests Facilitate<br /><span style="font-size: 1.5em;">Communication</span><br />about Software</p>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Behavior Testing</h2>
+					<ul style="font-size: 1.2em;">
+						<li>Describes a development effort that provides value</li>
+						<li>Uses "Domain Specific Language"</li>
+						<li style="width:65%">Automated tests against human readable "ubiquitous language"</li>
+					</ul>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Ubiquitous Domain What?</h2>
+					<pre style="width:69%; font-size:.55em; margin:0; height:150%;"><code style="max-height: none" data-trim data-noescape>
+Feature: Serve coffee
+    In order to earn money
+    Customers should be able to
+    buy coffee at all times
+
+    Scenario: Buy last coffee
+    Given there are 1 coffees left in the machine
+    And I have deposited 1 dollar
+    When I press the coffee button
+    Then I should be served a coffee
+</code></pre>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Running Behavior Tests</h2>
+					<p><b>behat/behat</b></p>
+					<br />
+					<p>PHP implementation of Cucumber</p>
+					<br />
+					<p style="width: 70%">Executes a series of "steps" defined by the keywords Given, When & Then</p>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Brief Introduction to Unit Testing</h2>
+					<p><b>phpunit/phpunit</b></p>
+					<br />
+					<p>Arrange - Act - Assert</p>
+					<p style="width:70%;">Test Functionality in isolation in order to eliminate outside variables</p>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Basic Test</h2>
+					<pre style="width:67%; font-size:.50em; margin:0; height:150%;"><code class="php" style="max-height: none" data-trim data-noescape>
+class SomeTest extends PHPUnit_Framework_TestCase()
+{
+    public function testCanCount() {
+        // Arrange
+        $counter = new Counter();
+
+        // Act
+        $counter->add(5);
+
+        // Assert
+        $this->assertEquals(5, $counter->getCount());
+    }
+}
+</code></pre>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Test Doubles</h2>
+					<blockquote style="width:65%; margin:2%; font-size:.9em;">
+						When we are writing a test in which we cannot (or chose not to) use a real depended-on component
+						(DOC), we can replace it with a Test Double. The Test Double doesn't have to behave exactly like
+						the real DOC; it merely has to provide the same API as the real one so that the SUT thinks it is the real one
+						<br />
+						- Gerard Meszaros
+					</blockquote>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Mocking Dependencies</h2>
+					<pre style="width:67%; font-size:.45em; margin:0; height:150%;"><code class="php" style="max-height: none" data-trim data-noescape>
+class SomeTest extends PHPUnit_Framework_TestCase()
+{
+    public function testCanDouble() {
+        // Arrange
+
+        $fetcher = $this->getMock('SomeFetchingInterface');
+
+        $fetcher->expects($this->any())
+            ->method('getNumber')
+            ->will($this->returnValue(5));
+
+        $doubler = new Doubler($fetcher);
+
+        // Act
+        $output = $doubler->double();
+
+        // Assert
+        $this->assertEquals(10, $output);
+    }
+}
+					</code></pre>
+				</section>
+				<section>
+					<p style="text-align: center; font-size: 1.5em;">Unit Testing Best Practices</p>
+					<ul>
+						<li>BEWARE over mocking</li>
+						<li>Don't mock what you don't own (sometimes)</li>
+						<li>Mock Interfaces Not Implementations (if possible)</li>
+						<li>Do not explicitly test non public methods</li>
+						<li>Use the minimum amount of assertions per test (1 is best)</li>
+						<li>BEWARE integration tests posing as unit tests</li>
+					</ul>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Code Coverage</h2>
+					<p>How comprehensively are we testing our code?</p>
+					<ul>
+						<li>Line Coverage</li>
+						<li class="fragment strike">Branch Coverage</li>
+						<li class="fragment strike">Path Coverage</li>
+					</ul>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<p style="font-size:2.5em;">Line Coverage is a filthy liar!</p>
+				</section>
+				<section data-background="img/upset-vault-boy.jpg">
+					<h2>LIES</h2>
+					<img style="width:54%" src="img/lying-coverage.png" />
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Mutation Testing</h2>
+					<p>Test our Test's Testing</p>
+					<p>humbug/humbug</p>
+					<br />
+					<p>Attempts to simulate branch coverage</p>
+					<p>Not all mutations are harmful</p>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Double Loop TDD</h2>
+					<img style="width:70%" src="img/TDD-vs-BDD.jpg" />
+				</section>
+				<section data-background="img/happy-vault-boy.jpg">
+					<h2>Characterization Testing</h2>
+					<p>A method to describe the ACTUAL behavior of EXISTING software</p>
+					<p>sebastianbergmann/de-legacy-fy</p>
+					<p style="width: 70%;">Uses XDebug execution trace data to test existing untested software</p>
+				</section>
+				<section data-background="img/happy-vault-boy.jpg" style="font-size:2em; text-align: left;">
+					<h1 style="background-image: url('img/yellow-background.jpg'); border: solid 5px white; color: #4d7fb2; -webkit-text-stroke: 3px white; text-align:center;">Thank You!</h1>
+					<pre style="width:67%; font-size:.55em; margin:0; height:150%;"><code class="php" style="max-height: none" data-trim data-noescape>
+public function testContactInformationForSpeaker()
+{
+    $this->assertTimKlever($this->speaker);
+
+    $this->assertEquals("tim@timisawesome.com",
+        $this->speaker->getEmailAddress()
+    );
+
+    $this->assertEquals("@timklever",
+        $this->speaker->getTwitterUsername()
+    );
+}
+					</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1920,
+				height: 1080,
+
+				margin: 0.0,
+
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
